@@ -1,0 +1,74 @@
+{
+    "name": "launchBall",
+    "maps": [
+        {
+            "name": "action",
+            "id": "a634609a-5b24-41a8-9aca-3260f705f1f9",
+            "actions": [
+                {
+                    "name": "launch",
+                    "type": "Button",
+                    "id": "8c4ddb5a-399e-438d-9761-2c731de4c9eb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "flipL",
+                    "type": "Button",
+                    "id": "63e20596-250d-4de2-8f3e-200c9575e277",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "flipR",
+                    "type": "Button",
+                    "id": "21e9bfec-5f22-40c3-84fa-624ef1541a21",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b92a06ba-b10e-4684-bd3a-b6816412f354",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "launch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "29861c4a-afa3-45c8-a68e-76f1169a994c",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "flipL",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "44e268bf-abf9-4bce-955b-f626a90e0ce2",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "flipR",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

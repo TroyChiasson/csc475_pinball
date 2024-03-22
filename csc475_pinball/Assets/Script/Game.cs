@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    [HideInInspector] public LaunchBall input;
+    [HideInInspector] public Pinballinput input;
     public Flipper flipperLeft;
     public Flipper flipperRight;
     public Ball ball;
@@ -23,14 +23,14 @@ public class Game : MonoBehaviour
     
     void Update()
     {
-        /*if (input.action.FlipperLeft.WasPressedThisFrame())
+        if (input.action.flipL.WasPressedThisFrame())
         {
             flipperLeft.Flip();
         }
-        else if (input.action.FlipperRight.WasPressedThisFrame())
+        else if (input.action.flipR.WasPressedThisFrame())
         {
             flipperRight.Flip();
-        }*/
+        }
         if (input.action.launch.WasPressedThisFrame())
         {
             ball.Launch();
