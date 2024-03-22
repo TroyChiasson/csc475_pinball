@@ -1,0 +1,34 @@
+{
+    "name": "launchBall",
+    "maps": [
+        {
+            "name": "action",
+            "id": "a634609a-5b24-41a8-9aca-3260f705f1f9",
+            "actions": [
+                {
+                    "name": "launch",
+                    "type": "Button",
+                    "id": "8c4ddb5a-399e-438d-9761-2c731de4c9eb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b92a06ba-b10e-4684-bd3a-b6816412f354",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "launch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
