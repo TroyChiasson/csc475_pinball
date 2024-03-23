@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4789774669185161610}
   - component: {fileID: 4232817002566100625}
   - component: {fileID: 3045986206761739994}
-  - component: {fileID: 5901221241036738697}
+  - component: {fileID: 1285190771446894271}
   m_Layer: 0
   m_Name: G477Proj1Board 1
   m_TagString: Untagged
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5901221241036738697
+--- !u!64 &1285190771446894271
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
