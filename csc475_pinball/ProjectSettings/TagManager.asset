@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BallEnd
   - BallStart
+  - Ball
   layers:
   - Default
   - TransparentFX
