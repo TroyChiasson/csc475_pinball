@@ -5,10 +5,13 @@ using System;
 
 public class Bumper : MonoBehaviour {
     public float force;
-    //private float light = GetComponent<Light>();
-    private Light bumperLight;
+
     public float fadeDuration = 1f; // Duration in seconds to fade out
+    private Light bumperLight;
     private float initialIntensity;
+
+    public int points = 1;
+    private Score score;    
 
     void Start()
     {
@@ -18,6 +21,8 @@ public class Bumper : MonoBehaviour {
         initialIntensity = bumperLight.intensity;
         // Turn off light
         bumperLight.intensity = 0f;
+
+        score = GetComponentInParent<Score>();
     }
 
     void OnCollisionEnter(Collision col) {
@@ -30,24 +35,16 @@ public class Bumper : MonoBehaviour {
             dir = -dir.normalized;
             // Add force in the direction of dir and multiply it by force
             ballrb.AddForce(dir * force, ForceMode.Impulse);
+
             // Start coroutine for fade out.
             StartCoroutine(FadeOutLight());
+
+            // Add score
+            score.IncrementScore(points);
         }
     }
 
     IEnumerator FadeOutLight() {
-        // // Calculate the rate at which the intensity will decrease per second
-        // float fadeRate = initialIntensity / fadeDuration;
-        // // Set bumper's light to initial intensity
-        // bumperLight.intensity = initialIntensity;
-        // // Gradually decrease the intensity until it reaches zero
-        // while (bumperLight.intensity > 0f) {
-        //     bumperLight.intensity -= (float)Math.Sqrt(fadeRate * Time.deltaTime);
-        //     yield return null;
-        // }
-        // // Make sure the intensity reaches zero after the fade out
-        // bumperLight.intensity = 0f;
-    
         float elapsedTime = 0f;
 
         // Gradually decrease the intensity using the ease-out cubic function

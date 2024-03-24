@@ -757,6 +757,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 212735673}
+  - component: {fileID: 212735674}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -787,6 +788,18 @@ Transform:
   - {fileID: 1678964105}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &212735674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212735672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11edf7dfbeda79b49af5314298eaaea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &267850042
 GameObject:
   m_ObjectHideFlags: 0
@@ -6913,9 +6926,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3446398446243417140, guid: 8709951bbf81b004481d5b37e6efab4a,
         type: 3}
-      propertyPath: fadeDuration
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 212735674}
     - target: {fileID: 5681474756282237382, guid: 8709951bbf81b004481d5b37e6efab4a,
         type: 3}
       propertyPath: m_Intensity

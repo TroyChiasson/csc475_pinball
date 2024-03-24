@@ -142,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 10
   fadeDuration: 1
+  points: 1
 --- !u!108 &5681474756282237382
 Light:
   m_ObjectHideFlags: 0
