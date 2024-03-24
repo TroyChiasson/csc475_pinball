@@ -13,6 +13,8 @@ public class Bumper : MonoBehaviour {
     public int points = 1;
     private Score score;    
 
+    private AudioSource AudioSource;
+
     void Start()
     {
         // Get bumper's light component
@@ -22,7 +24,13 @@ public class Bumper : MonoBehaviour {
         // Turn off light
         bumperLight.intensity = 0f;
 
+        // Create the score objects (defaults to 0)
         score = GetComponentInParent<Score>();
+
+        //
+        AudioSource = GetComponent<AudioSource>();
+        //
+        AudioSource.Stop();
     }
 
     void OnCollisionEnter(Collision col) {
@@ -41,6 +49,9 @@ public class Bumper : MonoBehaviour {
 
             // Add score
             score.IncrementScore(points);
+
+            //
+            AudioSource.Play();
         }
     }
 
