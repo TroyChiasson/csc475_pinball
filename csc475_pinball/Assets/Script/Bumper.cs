@@ -29,16 +29,38 @@ public class Bumper : MonoBehaviour {
         AudioSource.Stop();
     }
 
-    void OnCollisionEnter(Collision col) {
-        if(col.gameObject.tag == "Ball") {
+    // void OnCollisionEnter(Collision col) {
+    //     if(col.gameObject.tag == "Ball") {
+    //         // Get the rigid body of the collided ball
+    //         Rigidbody ballrb = col.gameObject.GetComponent<Rigidbody>();
+    //         // Calculate angle between the collision point and the ball
+    //         Vector3 dir = col.contacts[0].point - transform.position;
+    //         // Get opposite angle (-Vector3) and normalize it
+    //         dir = -dir.normalized;
+    //         // Add force in the direction of dir and multiply it by force
+    //         ballrb.AddForce(dir * force, ForceMode.Impulse);
+
+    //         // Start coroutine for fade out.
+    //         StartCoroutine(FadeOutLight());
+
+    //         // Add score
+    //         GameManager.Instance.AddScore(points);
+
+    //         //
+    //         AudioSource.Play();
+    //     }
+    // }
+
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "Ball") {
             // Get the rigid body of the collided ball
-            Rigidbody ballrb = col.gameObject.GetComponent<Rigidbody>();
+            Rigidbody ballrb = other.gameObject.GetComponent<Rigidbody>();
+
             // Calculate angle between the collision point and the ball
-            Vector3 dir = col.contacts[0].point - transform.position;
-            // Get opposite angle (-Vector3) and normalize it
-            dir = -dir.normalized;
+            Vector3 direction = (other.transform.position - transform.position).normalized;
+
             // Add force in the direction of dir and multiply it by force
-            ballrb.AddForce(dir * force, ForceMode.Impulse);
+            ballrb.AddForce(direction * force, ForceMode.Impulse);
 
             // Start coroutine for fade out.
             StartCoroutine(FadeOutLight());
