@@ -10,8 +10,7 @@ public class Bumper : MonoBehaviour {
     private Light bumperLight;
     private float initialIntensity;
 
-    public int points = 1;
-    private Score score;    
+    public int points = 1;  
 
     private AudioSource AudioSource;
 
@@ -23,9 +22,6 @@ public class Bumper : MonoBehaviour {
         initialIntensity = bumperLight.intensity;
         // Turn off light
         bumperLight.intensity = 0f;
-
-        // Create the score objects (defaults to 0)
-        score = GetComponentInParent<Score>();
 
         //
         AudioSource = GetComponent<AudioSource>();
@@ -48,7 +44,7 @@ public class Bumper : MonoBehaviour {
             StartCoroutine(FadeOutLight());
 
             // Add score
-            score.IncrementScore(points);
+            GameManager.Instance.AddScore(points);
 
             //
             AudioSource.Play();

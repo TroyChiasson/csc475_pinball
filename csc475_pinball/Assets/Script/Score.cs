@@ -1,10 +1,21 @@
+// DO NOT USE! THIS IS OLD CODE!
+
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Score : MonoBehaviour {
-    // Create score with a public getter and private setter
-    public int score { get; private set;}  = 0;
+    // Create a score for the instance with a public getter and private setter
+    // public static Score Instance { get {return instance;} private set;}  = 0;
+    private static Score instance;
+    public static Score Instance {
+        get { return instance; }
+    }
+    
+    // Private score variable
+    private int score = 0;
+    // Initialize the instance
+    
 
     // Function for other scripts to add points to the score
     public void IncrementScore(int points) {
@@ -32,6 +43,8 @@ public class Score : MonoBehaviour {
     private const string LBKey = "Leaderboard";
 
     private void Start() {
+        instance = this;
+
         // Read what's stored in PlayerPrefs
         string leaderboardJson = PlayerPrefs.GetString(LBKey);
         // If empty, create a new empty leaderboard
@@ -44,9 +57,8 @@ public class Score : MonoBehaviour {
     }
 
     // Submit an entry to the leaderboard.
-    // may need to be public. On a game over, do SubmitScore("name", "score.score") where score = GetComponentInParent<Score>();
-    // I think that'll work anyways. Might change this to just SubmitScore("name") and refrence score privately here.
-    private void SubmitScore(string playerName, int score) {
+    // may need to be public. On a game over, do Score.Instance.SubmitScore("name")
+    private void SubmitScore(string playerName) {
         // Create a new entry, populate it.
         PlayerScore entry = new PlayerScore();
         entry.playerName = playerName;

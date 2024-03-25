@@ -1,3 +1,5 @@
+// DO NOT USE! THIS IS OLD CODE!
+
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -21,6 +23,10 @@ public class Game : MonoBehaviour
     }
 
     
+    public void BallFall() {
+
+    }
+
     void Update()
     {
         if (input.action.flipL.WasPressedThisFrame())

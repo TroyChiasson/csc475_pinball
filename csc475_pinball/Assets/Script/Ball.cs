@@ -7,17 +7,19 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public float launchForce;
-    public Menu menu;
+    //public Menu menu;
  
     private Rigidbody rb;
     //private int lives;
     //private const int MAX_LIVES = 3;
 
-    
+    private Vector3 spawnPosition;
+
     void Start()
     {
         //lives = MAX_LIVES;
         rb = GetComponent<Rigidbody>();
+        spawnPosition = GameObject.FindGameObjectWithTag("BallStart").transform.position;
     }
 
     public void Launch()
@@ -25,26 +27,41 @@ public class Ball : MonoBehaviour
         rb.AddForce(Vector3.forward * launchForce, ForceMode.Impulse);
     }
     
+    /*
     public void Restart()
     {
         rb.velocity = Vector3.zero;
         //lives = MAX_LIVES;
     }
+    */
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("BallEnd"))
-        {
-            transform.position = GameObject.FindGameObjectWithTag("BallStart").transform.position;
-            rb.velocity = Vector3.zero;
-            /*lives--;
-            if (lives < 0)
-            {
-                //menu.GameOver();
-            }*/
+        if (other.CompareTag("BallEnd")) {
+            // Get reference to ball's prefab
+            GameObject prefab = gameObject;
+
+            // Destry ball
+            Destroy(gameObject);
+
+            // Decrement ActiveBalls counter
+            GameManager.Instance.AddActiveBalls(-1);
+
+            // If no ActiveBalls
+            if (GameManager.Instance.ActiveBalls < 1) {
+                // Decrement Life counter
+                GameManager.Instance.AddLife(-1);
+
+                // Create new ball
+                Instantiate(prefab, spawnPosition, Quaternion.identity);
+
+                // Increment ActiveBalls counter
+                GameManager.Instance.AddActiveBalls(1);
+            }   
         }
     }
 
+    /*
     private void OnCollisionEnter(Collision collision)
     {
         var bumper = collision.gameObject.GetComponent<Bumper>();
@@ -53,4 +70,5 @@ public class Ball : MonoBehaviour
             //bumper.Bump();
         }
     }
+    */
 }
