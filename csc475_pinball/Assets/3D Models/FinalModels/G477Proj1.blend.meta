@@ -3,37 +3,7 @@ guid: 1981b450affa7e7429fedaa67653c6be
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BWHite
-    second: {fileID: 2100000, guid: 8c16f99b154b8f74ab06f70c116e03a9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mint1
-    second: {fileID: 2100000, guid: faa4d8fd2d3b6f44a81f66c4b67f00e3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mint2
-    second: {fileID: 2100000, guid: b76a5b49f70e43946a10084132d8e30a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mint3.001
-    second: {fileID: 2100000, guid: 1c2b5868438a2da4d8d8acbd075eaed0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mint4
-    second: {fileID: 2100000, guid: 617b342a32d85dd4fb337c743bddd321, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mint5
-    second: {fileID: 2100000, guid: a7c69b3dafca3174f96666c9d26bf941, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
