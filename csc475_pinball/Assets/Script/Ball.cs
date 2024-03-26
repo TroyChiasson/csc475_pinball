@@ -46,7 +46,12 @@ public class Ball : MonoBehaviour
     {
         if (other.CompareTag("BallEnd"))
         {
-            ResetBall();
+            GameManager.Instance.AddLife(-1);
+            if (GameManager.Instance.Lives >= 1) 
+            {
+                ResetBall();
+            }
+            
             /*  // Get reference to ball's prefab
              GameObject prefab = gameObject;
 

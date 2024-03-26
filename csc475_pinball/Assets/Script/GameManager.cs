@@ -59,10 +59,10 @@ public class GameManager : MonoBehaviour
         // SpawnBall("MultiBallStart");
     }
 
-    void Update() {
+    /*void Update() {
         GameManager.Instance.input.FindAction("LaunchBall").Enable();
         //AddActiveBalls(1);
-    }
+    }*/
 
 
 
