@@ -6,27 +6,33 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Ball : MonoBehaviour
 {
-    public float launchForce;
+    public float launchForce; //used force to launch the ball
+    public ParticleSystem collisionParticles;
     //public Menu menu;
- 
+
     private Rigidbody rb;
+    private bool canLaunch; //used to prevent launching ball more than once
     //private int lives;
     //private const int MAX_LIVES = 3;
 
     private Vector3 spawnPosition;
 
-    void Start()
+    private void Start()
     {
         //lives = MAX_LIVES;
         rb = GetComponent<Rigidbody>();
+        canLaunch = true;
         spawnPosition = GameObject.FindGameObjectWithTag("BallStart").transform.position;
     }
 
-    public void Launch()
+    private void Update()
     {
-        rb.AddForce(Vector3.forward * launchForce, ForceMode.Impulse);
+        var input = GameManager.Instance.input;
+        if (canLaunch && input.Default.LaunchBall.WasReleasedThisFrame())
+        {
+            Launch();
+        }
     }
-    
     /*
     public void Restart()
     {
@@ -34,10 +40,11 @@ public class Ball : MonoBehaviour
         //lives = MAX_LIVES;
     }
     */
-    
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("BallEnd")) {
+        if (other.CompareTag("BallEnd"))
+        {
             // Get reference to ball's prefab
             GameObject prefab = gameObject;
 
@@ -48,7 +55,8 @@ public class Ball : MonoBehaviour
             GameManager.Instance.AddActiveBalls(-1);
 
             // If no ActiveBalls
-            if (GameManager.Instance.ActiveBalls < 1) {
+            if (GameManager.Instance.ActiveBalls < 1)
+            {
                 // Decrement Life counter
                 GameManager.Instance.AddLife(-1);
 
@@ -57,18 +65,25 @@ public class Ball : MonoBehaviour
 
                 // Increment ActiveBalls counter
                 GameManager.Instance.AddActiveBalls(1);
-            }   
+            }
         }
     }
 
-    /*
-    private void OnCollisionEnter(Collision collision)
+
+    public void Launch()
     {
-        var bumper = collision.gameObject.GetComponent<Bumper>();
-        if (bumper != null)
-        {
-            //bumper.Bump();
-        }
+        // add force in the direction the ball needs to go
+        float actualLaunchForce = Random.Range(launchForce * 0.8f, launchForce * 1.2f);
+        rb.AddForce(Vector3.forward * actualLaunchForce, ForceMode.Impulse);
+
+        canLaunch = false;
     }
-    */
+
+    public void ResetBall()
+    {
+        transform.position = GameObject.FindGameObjectWithTag("ballStart").transform.position;
+        rb.velocity = Vector3.zero;
+        canLaunch = true;
+    }
+
 }

@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
-    // Singleton instance
-    private static GameManager instance;
-
-    // Public static property to access the instance
-    public static GameManager Instance {
-        get { return instance; }
-    }
+public class GameManager : MonoBehaviour
+{
+    //set in inspector
+    public Ball ball;
 
     //
     [HideInInspector] public Pinballinput input;
+
+    // Singleton instance
+    //private static GameManager instance;
+
+    // Public static property to access the instance
+    public static GameManager Instance
+    { get; private set; }
+
 
     // Public properties for game variables
     public int Score { get; private set; }
@@ -22,36 +26,40 @@ public class GameManager : MonoBehaviour {
     // Leaderboard data structure
     private List<ScoreEntry> leaderboard = new List<ScoreEntry>();
 
-    void Awake() {
+    void Awake()
+    {
         //
-        input = new ();
+        input = new Pinballinput();
 
         // Enable player input
         input.Enable();
 
         // Initialize singleton instance
-        instance = this;
+        Instance = this;
     }
 
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         // Initialize game state
         ResetGame();
 
         // Show start ui
     }
 
-    
+
 
     /* ===== GAME VARIABLES ===== */
     // Public method to change score
-    public void AddScore(int amount) {
+    public void AddScore(int amount)
+    {
         Score += amount;
         Debug.Log("Score: " + Score);
     }
 
     // Public method to change life
-    public void AddLife(int amount) {
+    public void AddLife(int amount)
+    {
         Lives += amount;
         Debug.Log("Lives: " + Lives);
         /*
@@ -60,7 +68,8 @@ public class GameManager : MonoBehaviour {
     }
 
     // Public method to change the number of active balls
-    public void AddActiveBalls(int amount) {
+    public void AddActiveBalls(int amount)
+    {
         ActiveBalls += amount;
         Debug.Log("ActiveBalls: " + ActiveBalls);
     }
@@ -69,7 +78,8 @@ public class GameManager : MonoBehaviour {
 
     /* ===== LEADERBOARD ===== */
     // Public method to add a score entry to the leaderboard
-    public void AddToLeaderboard(string playerName, int score) {
+    public void AddToLeaderboard(string playerName, int score)
+    {
         // Add the new score entry
         leaderboard.Add(new ScoreEntry(playerName, score));
 
@@ -77,7 +87,8 @@ public class GameManager : MonoBehaviour {
         leaderboard.Sort((a, b) => b.score.CompareTo(a.score));
 
         // Ensure only top 10 scores are retained
-        if (leaderboard.Count > 10) {
+        if (leaderboard.Count > 10)
+        {
             leaderboard.RemoveAt(leaderboard.Count - 1);
         }
 
@@ -86,12 +97,14 @@ public class GameManager : MonoBehaviour {
     }
 
     // Private method to load leaderboard from PlayerPrefs
-    private void LoadLeaderboard() {
+    private void LoadLeaderboard()
+    {
         // Read leaderboardjson from PlayerPrefs
         string leaderboardjson = PlayerPrefs.GetString("Leaderboard");
 
         // If empty, create a new empty leaderboard
-        if (string.IsNullOrEmpty(leaderboardjson)) {
+        if (string.IsNullOrEmpty(leaderboardjson))
+        {
             leaderboard = new List<ScoreEntry>();
             return;
         }
@@ -101,7 +114,8 @@ public class GameManager : MonoBehaviour {
     }
 
     // Private method to save leaderboard to PlayerPrefs
-    private void SaveLeaderboard() {
+    private void SaveLeaderboard()
+    {
         // Serialize the JSON string
         string leaderboardjson = JsonUtility.ToJson(leaderboard);
 
@@ -114,11 +128,13 @@ public class GameManager : MonoBehaviour {
 
     // Inner class for leaderboard entry
     [System.Serializable]
-    public class ScoreEntry {
+    public class ScoreEntry
+    {
         public string playerName;
         public int score;
 
-        public ScoreEntry(string name, int s) {
+        public ScoreEntry(string name, int s)
+        {
             playerName = name;
             score = s;
         }
@@ -128,19 +144,22 @@ public class GameManager : MonoBehaviour {
 
     /* ===== EVENTS =====*/
     // Public method to reset game state
-    public void ResetGame() {
+    public void ResetGame()
+    {
         Score = 0;
-        Lives = 3;
+        Lives = 4;
         ActiveBalls = 1;
     }
 
     // Public method to end game
-    private void GameOver() {
+    private void GameOver()
+    {
         // Disable player input
         input.Disable();
-        
+
         // Show GameOver UI
     }
 
     // Objectives/quests/targets whatever
 }
+
