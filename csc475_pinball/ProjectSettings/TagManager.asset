@@ -8,6 +8,8 @@ TagManager:
   - BallStart
   - Ball
   - MultiBallStart
+  - Button
+  - ScoreText
   layers:
   - Default
   - TransparentFX
