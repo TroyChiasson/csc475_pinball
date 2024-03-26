@@ -60,20 +60,7 @@ public class GameManager : MonoBehaviour
     }
 
     void Update() {
-        if (input.Default.LaunchBall.WasReleasedThisFrame())
-        {
-            ball.Launch();
-            GameManager.Instance.input.FindAction("LaunchBall").Enable();
-
-        }
-        else if (input.Default.FlipperL.WasPressedThisFrame())
-        {
-            flipperL.Flip();
-        }
-        else if (input.Default.FlipperR.WasPressedThisFrame())
-        {
-            flipperR.Flip();
-        }
+        GameManager.Instance.input.FindAction("LaunchBall").Enable();
         //AddActiveBalls(1);
     }
 
