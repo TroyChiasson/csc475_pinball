@@ -7243,6 +7243,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gbox.Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 3846087247483460162, guid: f32c0130fdcb53a4c8566928022660b1,
+        type: 3}
+      propertyPath: launchForce
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 8118444150085392662, guid: f32c0130fdcb53a4c8566928022660b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7293,7 +7298,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6482640618361682538, guid: f32c0130fdcb53a4c8566928022660b1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
