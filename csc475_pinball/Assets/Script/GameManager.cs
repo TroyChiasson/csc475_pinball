@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
 {
     //set in inspector
     public Ball ball;
-
+    public Flipper flipperL;
+    public Flipper flipperR;
     public mainMenu menu;
 
     private AudioSource backgroundAudio;
@@ -59,6 +60,20 @@ public class GameManager : MonoBehaviour
     }
 
     void Update() {
+        if (input.Default.LaunchBall.WasReleasedThisFrame())
+        {
+            ball.Launch();
+            GameManager.Instance.input.FindAction("LaunchBall").Enable();
+
+        }
+        else if (input.Default.FlipperL.WasPressedThisFrame())
+        {
+            flipperL.Flip();
+        }
+        else if (input.Default.FlipperR.WasPressedThisFrame())
+        {
+            flipperR.Flip();
+        }
         //AddActiveBalls(1);
     }
 
@@ -110,7 +125,7 @@ public class GameManager : MonoBehaviour
 
         // Apply the new scale
         ball.transform.localScale = newScale;
-        Debug.Log("ActiveBalls: " + ActiveBalls);
+        
 
     }
 

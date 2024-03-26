@@ -1689,6 +1689,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 2137891456}
+  flipperL: {fileID: 892876208}
+  flipperR: {fileID: 627780152}
   menu: {fileID: 824275592}
 --- !u!1 &236017243 stripped
 GameObject:

@@ -46,33 +46,34 @@ public class Ball : MonoBehaviour
     {
         if (other.CompareTag("BallEnd"))
         {
-            // Get reference to ball's prefab
-            GameObject prefab = gameObject;
+            ResetBall();
+            /*  // Get reference to ball's prefab
+             GameObject prefab = gameObject;
 
-            // Destry ball
-            Destroy(gameObject);
+             // Destry ball
+             Destroy(gameObject);
 
-            // Decrement ActiveBalls counter
-            GameManager.Instance.AddActiveBalls(-1);
+             // Decrement ActiveBalls counter
+             GameManager.Instance.AddActiveBalls(-1);
 
-            // If no ActiveBalls
-            if (GameManager.Instance.ActiveBalls < 1)
-            {
-                Debug.Log("ActiveBalls: " + GameManager.Instance.ActiveBalls);
-                // Decrement Life counter
-                GameManager.Instance.AddLife(-1);
 
-                // Create new ball
-                //Instantiate(prefab, spawnPosition, Quaternion.identity);
-                GameManager.Instance.SpawnBall("BallStart");
+             // If no ActiveBalls
+             if (GameManager.Instance.ActiveBalls < 1)
+             {
+                 Debug.Log("ActiveBalls: " + GameManager.Instance.ActiveBalls);
+                 // Decrement Life counter
+                 GameManager.Instance.AddLife(-1);
 
-                // Increment ActiveBalls counter
-                GameManager.Instance.AddActiveBalls(1);
+                 // Create new ball
+                 //Instantiate(prefab, spawnPosition, Quaternion.identity);
+                 GameManager.Instance.SpawnBall("BallStart");
 
-                //
-                ResetBall();
-            }
-        }
+                 // Increment ActiveBalls counter
+                 GameManager.Instance.AddActiveBalls(1);
+
+                 //
+        }*/
+    }
     }
 
 
@@ -90,6 +91,7 @@ public class Ball : MonoBehaviour
         transform.position = GameObject.FindGameObjectWithTag("BallStart").transform.position;
         rb.velocity = Vector3.zero;
         canLaunch = true;
+        GameManager.Instance.input.FindAction("LaunchBall").Enable();
     }
 
 }
