@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public Ball ball;
 
     public mainMenu menu;
+
+    private AudioSource backgroundAudio;
     
     //
     [HideInInspector] public Pinballinput input;
@@ -40,6 +42,7 @@ public class GameManager : MonoBehaviour
 
         // Initialize singleton instance
         Instance = this;
+
     }
 
     // Start is called before the first frame update
@@ -190,6 +193,7 @@ public class GameManager : MonoBehaviour
     // Public method to end game
     private void GameOver()
     {
+        backgroundAudio.Stop();
         // Disable player input
         input.Disable();
 

@@ -6,16 +6,20 @@ public class mainMenu : MonoBehaviour
 {
     public GameObject mainMenuObj;
     public GameObject gameOverMenu;
-
     public GameObject life1;
     public GameObject life2;
     public GameObject life3;
     public GameObject life4;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start() {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Stop();
+
         mainMenuObj.SetActive(true);
         gameOverMenu.SetActive(false);
+        ResetLives();
         GameManager.Instance.input.Disable();
     }
 
@@ -26,7 +30,7 @@ public class mainMenu : MonoBehaviour
     }
 
     public void StartGame() {
-        
+        audioSource.Play();
         mainMenuObj.SetActive(false);
         gameOverMenu.SetActive(false);
         GameManager.Instance.input.Enable();
