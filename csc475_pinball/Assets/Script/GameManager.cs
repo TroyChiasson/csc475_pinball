@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
         Vector3 currentScale = ball.transform.localScale;
 
         // Modify the scale (for example, double the scale along the X axis)
-        float scaleFactor = 1.5f;
+        float scaleFactor = 1.0f;
         Vector3 newScale = new Vector3(currentScale.x * scaleFactor, currentScale.y * scaleFactor, currentScale.z * scaleFactor);
 
         // Apply the new scale
