@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int amount)
     {
         Score += amount;
-        Debug.Log("Score: " + Score);
+        //Debug.Log("Score: " + Score);
     }
 
     // Public method to change life
@@ -80,14 +80,26 @@ public class GameManager : MonoBehaviour
     // Public method to change the number of active balls
     public void AddActiveBalls(int amount) {
         ActiveBalls += amount;
-        Debug.Log("ActiveBalls: " + ActiveBalls);   
+        //Debug.Log("ActiveBalls: " + ActiveBalls);   
     }
 
     public void SpawnBall(string location) {
         AddActiveBalls(1);
         Vector3 spawnPosition = GameObject.FindGameObjectWithTag(location).transform.position;
         GameObject prefab = GameObject.FindGameObjectWithTag("Ball");
-        Instantiate(prefab, spawnPosition, Quaternion.identity);
+        GameObject ball = Instantiate(prefab, spawnPosition, Quaternion.identity);
+
+        // Unity hates me so I have to rescale instantiated objects
+        // Get the current local scale
+        Vector3 currentScale = ball.transform.localScale;
+
+        // Modify the scale (for example, double the scale along the X axis)
+        float scaleFactor = 1.5f;
+        Vector3 newScale = new Vector3(currentScale.x * scaleFactor, currentScale.y * scaleFactor, currentScale.z * scaleFactor);
+
+        // Apply the new scale
+        ball.transform.localScale = newScale;
+
     }
 
 
