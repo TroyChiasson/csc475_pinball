@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
         // Initialize game state
         ResetGame();
 
+        
         // Show start ui
 
 
@@ -72,8 +73,11 @@ public class GameManager : MonoBehaviour
         Lives += amount;
         Debug.Log("Lives: " + Lives);
     
-        // If life < 1, game over
-        GameOver();
+        if(Lives < 1)
+        {
+            Debug.Log("Lives game: " + Lives);
+            GameOver();
+        }
         
     }
 
@@ -174,7 +178,7 @@ public class GameManager : MonoBehaviour
     public void ResetGame()
     {
         Score = 0;
-        Lives = 1;
+        Lives = 4;
         ActiveBalls = 1;
     }
 

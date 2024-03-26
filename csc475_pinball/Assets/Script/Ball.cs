@@ -31,6 +31,7 @@ public class Ball : MonoBehaviour
         if (canLaunch && input.Default.LaunchBall.WasReleasedThisFrame())
         {
             Launch();
+            canLaunch = false;
         }
     }
     /*
@@ -68,7 +69,7 @@ public class Ball : MonoBehaviour
                 GameManager.Instance.AddActiveBalls(1);
 
                 //
-                canLaunch = true;
+                ResetBall();
             }
         }
     }
@@ -85,7 +86,7 @@ public class Ball : MonoBehaviour
 
     public void ResetBall()
     {
-        transform.position = GameObject.FindGameObjectWithTag("ballStart").transform.position;
+        transform.position = GameObject.FindGameObjectWithTag("BallStart").transform.position;
         rb.velocity = Vector3.zero;
         canLaunch = true;
     }
