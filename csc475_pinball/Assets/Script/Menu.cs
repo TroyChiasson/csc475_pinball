@@ -7,6 +7,11 @@ public class mainMenu : MonoBehaviour
     public GameObject mainMenuObj;
     public GameObject gameOverMenu;
 
+    public GameObject life1;
+    public GameObject life2;
+    public GameObject life3;
+    public GameObject life4;
+
     // Start is called before the first frame update
     void Start() {
         mainMenuObj.SetActive(true);
@@ -21,6 +26,7 @@ public class mainMenu : MonoBehaviour
     }
 
     public void StartGame() {
+        
         mainMenuObj.SetActive(false);
         gameOverMenu.SetActive(false);
         GameManager.Instance.input.Enable();
@@ -30,5 +36,12 @@ public class mainMenu : MonoBehaviour
         mainMenuObj.SetActive(false);
         gameOverMenu.SetActive(true);
         GameManager.Instance.input.Disable();
+    }
+
+    public void ResetLives() {
+        life1.SetActive(true);
+        life2.SetActive(true);
+        life3.SetActive(true);
+        life4.SetActive(true);
     }
 }

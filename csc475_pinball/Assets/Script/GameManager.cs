@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
     public Ball ball;
 
     public mainMenu menu;
+    
     //
     [HideInInspector] public Pinballinput input;
+
 
     // Singleton instance
     //private static GameManager instance;
@@ -73,8 +75,10 @@ public class GameManager : MonoBehaviour
         Lives += amount;
         Debug.Log("Lives: " + Lives);
     
-        if(Lives < 1)
-        {
+        if (Lives == 3) menu.life1.SetActive(false);
+        if (Lives == 2) menu.life2.SetActive(false);
+        if (Lives == 1) menu.life3.SetActive(false);
+        if (Lives < 1) {
             Debug.Log("Lives game: " + Lives);
             GameOver();
         }
