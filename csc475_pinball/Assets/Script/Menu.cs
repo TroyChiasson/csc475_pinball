@@ -11,7 +11,7 @@ public class mainMenu : MonoBehaviour
     void Start() {
         mainMenuObj.SetActive(true);
         gameOverMenu.SetActive(false);
-        // Game.Instance.input.Disable();
+        Game.Instance.input.Disable();
     }
 
     // Update is called once per frame
@@ -22,10 +22,13 @@ public class mainMenu : MonoBehaviour
 
     public void StartGame() {
         mainMenuObj.SetActive(false);
-        // Game.Instance.input.Enable();
+        gameOverMenu.SetActive(false);
+        Game.Instance.input.Enable();
     }
 
     public void GameOver() {
+        mainMenuObj.SetActive(false);
         gameOverMenu.SetActive(true);
+        Game.Instance.input.Disable();
     }
 }

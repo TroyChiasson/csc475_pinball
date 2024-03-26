@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,6 +8,7 @@ public class GameManager : MonoBehaviour
     //set in inspector
     public Ball ball;
 
+    public mainMenu menu;
     //
     [HideInInspector] public Pinballinput input;
 
@@ -47,7 +49,7 @@ public class GameManager : MonoBehaviour
         // Show start ui
 
 
-        SpawnBall("MultiBallStart");
+        // SpawnBall("MultiBallStart");
     }
 
     void Update() {
@@ -69,9 +71,10 @@ public class GameManager : MonoBehaviour
     {
         Lives += amount;
         Debug.Log("Lives: " + Lives);
-        /*
-        If life < 1, game over
-        */
+    
+        // If life < 1, game over
+        GameOver();
+        
     }
 
     // Public method to change the number of active balls
@@ -159,7 +162,7 @@ public class GameManager : MonoBehaviour
     public void ResetGame()
     {
         Score = 0;
-        Lives = 4;
+        Lives = 1;
         ActiveBalls = 1;
     }
 
@@ -170,6 +173,9 @@ public class GameManager : MonoBehaviour
         input.Disable();
 
         // Show GameOver UI
+        menu.GameOver();
+
+        ResetGame();
     }
 
     // Objectives/quests/targets whatever
