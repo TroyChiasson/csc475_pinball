@@ -7246,7 +7246,7 @@ PrefabInstance:
     - target: {fileID: 3846087247483460162, guid: f32c0130fdcb53a4c8566928022660b1,
         type: 3}
       propertyPath: launchForce
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8118444150085392662, guid: f32c0130fdcb53a4c8566928022660b1,
         type: 3}

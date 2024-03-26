@@ -107,6 +107,7 @@ public class GameManager : MonoBehaviour
 
         // Apply the new scale
         ball.transform.localScale = newScale;
+        Debug.Log("ActiveBalls: " + ActiveBalls);
 
     }
 

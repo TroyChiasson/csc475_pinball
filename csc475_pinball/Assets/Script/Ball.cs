@@ -58,6 +58,7 @@ public class Ball : MonoBehaviour
             // If no ActiveBalls
             if (GameManager.Instance.ActiveBalls < 1)
             {
+                Debug.Log("ActiveBalls: " + GameManager.Instance.ActiveBalls);
                 // Decrement Life counter
                 GameManager.Instance.AddLife(-1);
 
