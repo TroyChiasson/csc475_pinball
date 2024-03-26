@@ -45,6 +45,13 @@ public class GameManager : MonoBehaviour
         ResetGame();
 
         // Show start ui
+
+
+        SpawnBall("MultiBallStart");
+    }
+
+    void Update() {
+        //AddActiveBalls(1);
     }
 
 
@@ -68,12 +75,17 @@ public class GameManager : MonoBehaviour
     }
 
     // Public method to change the number of active balls
-    public void AddActiveBalls(int amount)
-    {
+    public void AddActiveBalls(int amount) {
         ActiveBalls += amount;
-        Debug.Log("ActiveBalls: " + ActiveBalls);
+        Debug.Log("ActiveBalls: " + ActiveBalls);   
     }
 
+    public void SpawnBall(string location) {
+        AddActiveBalls(1);
+        Vector3 spawnPosition = GameObject.FindGameObjectWithTag(location).transform.position;
+        GameObject prefab = GameObject.FindGameObjectWithTag("Ball");
+        Instantiate(prefab, spawnPosition, Quaternion.identity);
+    }
 
 
     /* ===== LEADERBOARD ===== */

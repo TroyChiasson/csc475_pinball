@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2015046, g: 0.0724834, b: 0.032007836, a: 1}
+  m_IndirectSpecularColor: {r: 0.20150496, g: 0.072483644, b: 0.032007784, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1385,6 +1385,7 @@ Transform:
   - {fileID: 1864995889}
   - {fileID: 1691180671}
   - {fileID: 2102296553}
+  - {fileID: 1647699958}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &212735674
@@ -2953,6 +2954,11 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4424248792214553196, guid: bfdcb00e1deaadd4c9f8c3c26211dc16,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2999,7 +3005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  force: 75
+  force: 50
 --- !u!59 &627780153
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -3012,7 +3018,7 @@ HingeJoint:
   m_Anchor: {x: -0.008, y: 0.0032994654, z: 0.042}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 1.3676836, y: 2.7309446, z: -3.9138052}
   serializedVersion: 2
   m_UseSpring: 1
   m_Spring:
@@ -3028,8 +3034,8 @@ HingeJoint:
   m_ExtendedLimits: 0
   m_UseAcceleration: 0
   m_Limits:
-    min: -0.115349054
-    max: 114.31286
+    min: 0
+    max: 120
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -3837,6 +3843,11 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4424248792214553196, guid: bfdcb00e1deaadd4c9f8c3c26211dc16,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -3847,15 +3858,15 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1145894347595674014, guid: bfdcb00e1deaadd4c9f8c3c26211dc16,
         type: 3}
-      insertIndex: -1
+      insertIndex: 4
       addedObject: {fileID: 892876208}
     - targetCorrespondingSourceObject: {fileID: 1145894347595674014, guid: bfdcb00e1deaadd4c9f8c3c26211dc16,
         type: 3}
-      insertIndex: -1
+      insertIndex: 5
       addedObject: {fileID: 892876210}
     - targetCorrespondingSourceObject: {fileID: 1145894347595674014, guid: bfdcb00e1deaadd4c9f8c3c26211dc16,
         type: 3}
-      insertIndex: -1
+      insertIndex: 6
       addedObject: {fileID: 892876209}
   m_SourcePrefab: {fileID: 100100000, guid: bfdcb00e1deaadd4c9f8c3c26211dc16, type: 3}
 --- !u!4 &892876206 stripped
@@ -3883,7 +3894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  force: 75
+  force: 50
 --- !u!59 &892876209
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -3896,7 +3907,7 @@ HingeJoint:
   m_Anchor: {x: -0.008, y: 0, z: 0.042}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -1.3604606, y: 2.5915, z: -3.9296424}
   serializedVersion: 2
   m_UseSpring: 1
   m_Spring:
@@ -3912,8 +3923,8 @@ HingeJoint:
   m_ExtendedLimits: 0
   m_UseAcceleration: 0
   m_Limits:
-    min: -74.608765
-    max: 5.6401052
+    min: -120
+    max: 0
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -4292,6 +4303,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Gumdrop1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525489634741243379, guid: fc77c238f5ce5604cb11bc360ab89c47,
+        type: 3}
+      propertyPath: force
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525489634741243379, guid: fc77c238f5ce5604cb11bc360ab89c47,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4455127421592784169, guid: fc77c238f5ce5604cb11bc360ab89c47,
         type: 3}
@@ -5342,6 +5363,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7048856989069060711, guid: fc77c238f5ce5604cb11bc360ab89c47,
+        type: 3}
+      propertyPath: force
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6510,6 +6536,37 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1647699957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1647699958}
+  m_Layer: 0
+  m_Name: MultiBallStart
+  m_TagString: MultiBallStart
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1647699958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647699957}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.39, y: 0.084, z: 4.4}
+  m_LocalScale: {x: 0.6666666, y: 0.6666667, z: 0.6666667}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 212735673}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1665551684
 GameObject:
   m_ObjectHideFlags: 0
@@ -7126,7 +7183,7 @@ Transform:
   m_GameObject: {fileID: 1793402734}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.25, y: 0, z: 3}
+  m_LocalPosition: {x: -3.2, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8583,7 +8640,7 @@ Transform:
   m_GameObject: {fileID: 2102296552}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.1, y: 0, z: -3.912}
+  m_LocalPosition: {x: 3.1, y: 0.084, z: -4.2433}
   m_LocalScale: {x: 0.6384952, y: 0.59554, z: 0.681}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9028,6 +9085,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ball move
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281367245353905276, guid: 18da20d920a242743b1691c3105894bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7752473546016341086, guid: 18da20d920a242743b1691c3105894bf,
         type: 3}

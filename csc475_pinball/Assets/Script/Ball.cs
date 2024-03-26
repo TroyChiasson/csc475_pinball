@@ -22,7 +22,7 @@ public class Ball : MonoBehaviour
         //lives = MAX_LIVES;
         rb = GetComponent<Rigidbody>();
         canLaunch = true;
-        spawnPosition = GameObject.FindGameObjectWithTag("BallStart").transform.position;
+        //spawnPosition = GameObject.FindGameObjectWithTag("BallStart").transform.position;
     }
 
     private void Update()
@@ -61,10 +61,14 @@ public class Ball : MonoBehaviour
                 GameManager.Instance.AddLife(-1);
 
                 // Create new ball
-                Instantiate(prefab, spawnPosition, Quaternion.identity);
+                //Instantiate(prefab, spawnPosition, Quaternion.identity);
+                GameManager.Instance.SpawnBall("BallStart");
 
                 // Increment ActiveBalls counter
                 GameManager.Instance.AddActiveBalls(1);
+
+                //
+                canLaunch = true;
             }
         }
     }

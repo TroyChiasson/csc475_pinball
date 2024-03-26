@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 930d3e64af598274ea29c5961329a762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 10
+  force: 8
   points: 1
   fadeDuration: 1
   spinDuration: 0
