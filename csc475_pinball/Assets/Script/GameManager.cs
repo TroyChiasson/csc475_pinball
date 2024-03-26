@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public int Score { get; private set; }
     public int Lives { get; private set; }
     public int ActiveBalls { get; private set; }
+    public bool canLaunch { get; set; }
 
     // Leaderboard data structure
     private List<ScoreEntry> leaderboard = new List<ScoreEntry>();
@@ -59,10 +60,11 @@ public class GameManager : MonoBehaviour
         // SpawnBall("MultiBallStart");
     }
 
-    /*void Update() {
-        GameManager.Instance.input.FindAction("LaunchBall").Enable();
+    void Update() {
+        //GameManager.Instance.input.FindAction("LaunchBall").Enable();
         //AddActiveBalls(1);
-    }*/
+        //Debug.Log(canLaunch);
+    }
 
 
 
@@ -93,7 +95,7 @@ public class GameManager : MonoBehaviour
     // Public method to change the number of active balls
     public void AddActiveBalls(int amount) {
         ActiveBalls += amount;
-        //Debug.Log("ActiveBalls: " + ActiveBalls);   
+        Debug.Log("ActiveBalls: " + ActiveBalls);   
     }
 
     public void SpawnBall(string location) {
@@ -113,7 +115,11 @@ public class GameManager : MonoBehaviour
         // Apply the new scale
         ball.transform.localScale = newScale;
         
-
+        // Enable the Ball script on the newly instantiated ball GameObject
+        Ball ballScript = ball.GetComponent<Ball>();
+        if (ballScript != null) {
+            ballScript.enabled = true;
+        }
     }
 
 
@@ -190,6 +196,7 @@ public class GameManager : MonoBehaviour
         Score = 0;
         Lives = 4;
         ActiveBalls = 1;
+        canLaunch = true;
     }
 
     // Public method to end game

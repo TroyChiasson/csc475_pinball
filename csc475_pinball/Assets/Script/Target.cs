@@ -266,7 +266,7 @@ public class Target : MonoBehaviour {
             GameManager.Instance.AddScore(points);
 
             // Play sound
-            Debug.Log("Playingsound");
+            //Debug.Log("Playingsound");
             audioSource.Play();
         }
     }

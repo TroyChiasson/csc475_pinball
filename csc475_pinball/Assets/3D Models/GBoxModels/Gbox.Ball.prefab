@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3861457928166858891}
   - component: {fileID: 2007655159110866554}
   - component: {fileID: 1880752385642284581}
-  - component: {fileID: 3846087247483460162}
+  - component: {fileID: 583772703297640371}
   m_Layer: 0
   m_Name: Gbox.Ball
   m_TagString: Ball
@@ -135,7 +135,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
---- !u!114 &3846087247483460162
+--- !u!114 &583772703297640371
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4d7cc86500296d4d870a0f62388323d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchForce: 25
+  launchForce: 20
   collisionParticles: {fileID: 0}
 --- !u!1001 &3290834829847984450
 PrefabInstance:
